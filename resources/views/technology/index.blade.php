@@ -17,7 +17,6 @@
       <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
-          <th>Project ID</th>
           <th>Image</th>
           <th>Title</th>
           <th>Description</th>
@@ -27,9 +26,6 @@
         <tbody>
             @foreach ($technologies as $technology)
             <tr>
-                <td class="text-center">
-                    {{ $technology->project_id }}
-                </td>
                 <td class="text-center">
                     <img src="{{ Storage::url('public/technologies/').$technology->image }}" class="rounded" style="width: 150px">
                 </td>

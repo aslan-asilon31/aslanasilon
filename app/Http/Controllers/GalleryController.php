@@ -20,7 +20,7 @@ class GalleryController extends Controller
     public function create()
     {
         $projects = Project::all();
-        return view('projectgallery.create', compact('projects'));
+        return view('gallery.create', compact('projects'));
     }
 
 
@@ -38,15 +38,9 @@ class GalleryController extends Controller
 
         $gallery = Gallery::create([
             'id'     => $request->id,
-            'project_id'     => $request->project_id,
             'image'     => $image->hashName(),
             'title'     => $request->title,
             'description'   => $request->description
-        ]);
-
-        $projectgallery = ProjectGallery::create([
-            'project_id'   => $request->project_id,
-            'gallery_id'   => $request->id,
         ]);
 
         if($gallery){
@@ -77,7 +71,6 @@ class GalleryController extends Controller
         if($request->file('image') == "") {
 
             $gallery->update([
-                'project_id'     => $request->project_id,
                 'title'     => $request->title,
                 'description'   => $request->description
             ]);

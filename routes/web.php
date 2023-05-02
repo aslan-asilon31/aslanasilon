@@ -7,6 +7,7 @@ use App\Http\Controllers\TechnologyController;
 use App\Http\Controllers\ProjectGalleryController;
 use App\Http\Controllers\UrlController;
 use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -20,9 +21,9 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Auth::routes();
 
@@ -36,3 +37,4 @@ Route::resource('technologies', TechnologyController::class);
 Route::resource('urls', UrlController::class);
 Route::resource('galleries', GalleryController::class);
 Route::resource('projectgalleries', ProjectGalleryController::class);
+Route::get('/', [VisitorController::class, 'index']);

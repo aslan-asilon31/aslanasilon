@@ -30,8 +30,8 @@ class Project extends Model
     //     return $this->hasMany(Url::class);
     // }
 
-    // public function technologies()
-    // {
-    //     return $this->hasMany(Technology::class);
-    // }
+    public function technologies()
+    {
+        return $this->hasMany(Technology::class);
+    }
 }

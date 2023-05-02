@@ -56,7 +56,7 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        return view('blog.edit', compact('blog'));
+        return view('project.edit', compact('project'));
     }
 
     public function update(Request $request, Project $project)
@@ -66,7 +66,7 @@ class ProjectController extends Controller
             'description'   => 'required'
         ]);
 
-        //get data Blog by ID
+        //get data Project by ID
         $project = Project::findOrFail($project->id);
 
         if($request->file('image') == "") {

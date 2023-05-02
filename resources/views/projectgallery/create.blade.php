@@ -32,9 +32,9 @@
                             <label for="exampleSelectRounded0">Gallery ID</label>
                             <select class="custom-select rounded-0" id="exampleSelectRounded0">
                               <option style="display:none;">Select Gallery</option>
-                              @foreach ($galleries as $g)
+                              {{-- @foreach ($galleries as $g)
                               <option name="gallery_id" value="{{ $g->id }}">{{ $g->id }} - {{ $g->title }}</option>
-                              @endforeach
+                              @endforeach --}}
                             </select>
                         </div>
 
