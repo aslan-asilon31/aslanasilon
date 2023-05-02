@@ -15,7 +15,6 @@
                     <form action="{{ route('urls.store') }}" method="POST" enctype="multipart/form-data">
                     
                         @csrf
-                        
 
                         <div class="form-group">
                             <label class="font-weight-bold">Image</label>
@@ -28,14 +27,14 @@
                                 </div>
                             @enderror
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="exampleSelectRounded0">Project ID</label>
                             <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                              <option >Select Project</option>
-                                @foreach ($projects as $project)
-                                <option value="{{ $project->id }}">{{ $project->name }}</option>
-                                @endforeach
+                              <option style="display:none;">Select Project</option>
+                              @foreach ($projects as $p)
+                              <option name="project_id" value="{{ $p->id }}">{{ $p->title }}</option>
+                              @endforeach
                             </select>
                         </div>
 

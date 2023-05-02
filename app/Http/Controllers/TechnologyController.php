@@ -27,7 +27,6 @@ class TechnologyController extends Controller
     {
         $this->validate($request, [
             'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'project_id'     => 'required',
             'title'     => 'required',
             'description'   => 'required'
         ]);
@@ -38,7 +37,6 @@ class TechnologyController extends Controller
 
         $technology = Technology::create([
             'image'     => $image->hashName(),
-            'project_id'     => $request->project_id,
             'title'     => $request->title,
             'description'   => $request->description
         ]);
@@ -61,7 +59,6 @@ class TechnologyController extends Controller
     {
         $this->validate($request, [
             'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'project_id'     => 'required',
             'title'     => 'required',
             'description'   => 'required'
         ]);
@@ -72,7 +69,6 @@ class TechnologyController extends Controller
         if($request->file('image') == "") {
 
             $technology->update([
-                'project_id'     => $request->project_id,
                 'title'     => $request->title,
                 'description'   => $request->description
             ]);

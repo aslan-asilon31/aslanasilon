@@ -10,7 +10,6 @@ class Technology extends Model
     use HasFactory;
 
     protected $fillable = [
-        'project_id',
         'image',
         'title',
         'description',

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Technology Add')
+@section('title', 'Gallery Edit')
 
 @section('content_header')
-    <h1>Technology Add</h1>
+    <h1>Project Edit</h1>
 @stop
 
 @section('content')
@@ -12,27 +12,18 @@
         <div class="col-md-12">
             <div class="card border-0 shadow rounded">
                 <div class="card-body">
-                    <form action="{{ route('technologies.store') }}" method="POST" enctype="multipart/form-data">
-                    
+                    <form action="{{ route('projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
 
                         <div class="form-group">
                             <label class="font-weight-bold">Image</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
-                        
-                            <!-- error message untuk title -->
-                            @error('image')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                            <input type="file" class="form-control" name="image">
                         </div>
-                        
-                        <div class="form-group">
 
                         <div class="form-group">
                             <label class="font-weight-bold">Title</label>
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Insert title">
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $project->title) }}" placeholder="Insert title">
                         
                             <!-- error message untuk title -->
                             @error('title')
@@ -44,7 +35,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">Description</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description') }}</textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description', $project->description) }}</textarea>
                         
                             <!-- error message untuk content -->
                             @error('description')
@@ -54,7 +45,7 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
+                        <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>
 
                     </form> 

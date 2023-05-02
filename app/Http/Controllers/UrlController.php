@@ -27,7 +27,6 @@ class UrlController extends Controller
     {
         $this->validate($request, [
             'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'project_id'     => 'required',
             'title'     => 'required',
             'description'   => 'required'
         ]);
@@ -38,7 +37,6 @@ class UrlController extends Controller
 
         $url = Url::create([
             'image'     => $image->hashName(),
-            'project_id'     => $request->project_id,
             'title'     => $request->title,
             'description'   => $request->description
         ]);
@@ -57,22 +55,25 @@ class UrlController extends Controller
         return view('url.edit', compact('url'));
     }
 
+    public function show()
+    {
+        
+    }
+
     public function update(Request $request, Url $url)
     {
         $this->validate($request, [
-            'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'project_id'     => 'required',
+            // 'image'     => 'required|image|mimes:png,jpg,jpeg',
             'title'     => 'required',
             'description'   => 'required'
         ]);
 
-        //get data Blog by ID
+        //get data Url by ID
         $url = Url::findOrFail($url->id);
 
         if($request->file('image') == "") {
 
             $url->update([
-                'project_id'     => $request->project_id,
                 'title'     => $request->title,
                 'description'   => $request->description
             ]);
