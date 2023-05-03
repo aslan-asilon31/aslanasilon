@@ -23,7 +23,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">Title</label>
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $gallery->title) }}" placeholder="Insert title">
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $technology->title) }}" placeholder="Insert title">
                         
                             <!-- error message untuk title -->
                             @error('title')
@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">Description</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description', $gallery->description) }}</textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description', $technology->description) }}</textarea>
                         
                             <!-- error message untuk content -->
                             @error('description')
@@ -64,6 +64,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace( 'description' );
+    // CKEDITOR.replace( 'description' );
 </script>
 @stop

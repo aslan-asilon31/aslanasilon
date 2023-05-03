@@ -10,7 +10,7 @@
 <div class="card">
     <div class="card-header">
       <h3 class="card-title">Project Gallery List</h3>
-      {{-- <a href="{{ route('projectgalleries.create') }}" class="btn btn-md btn-success mb-3">Add Gallery</a> --}}
+      <a href="{{ route('projectgalleries.create') }}" class="btn btn-md btn-success mb-3">Add Gallery</a>
     </div>
     <!-- /.card-header -->
     <div class="card-body">

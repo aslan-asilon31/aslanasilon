@@ -112,11 +112,22 @@
                                                 </figure>
                                             </a>
                                             <div class="">
-                                                <h6>Technology :
-                                                    @foreach ($project->technologies as $pt)
-                                                        {{ $pt->title }}
+                                                <h6>Technology : </h6>
+                                                    @foreach ($project->projectgalleries()->get() as $ppg)
+                                                        @foreach ($ppg->technology()->get() as $ppgt)
+                                                        <a href="{{ ($ppgt->description) }}">
+                                                            <img src="{{ Storage::url('public/technologies/').$ppgt->image }}" class="rounded" style="width: 100px;height:50px">
+                                                        </a>
+                                                        @endforeach
                                                     @endforeach
-                                                </h6>
+                                                    <br>
+                                                <h6>Link: </h6>
+                                                    @foreach ($project->projectgalleries()->get() as $ppg)
+                                                        @foreach ($ppg->url()->get() as $ppgu)
+                                                            <img src="{{ Storage::url('public/urls/').$ppgu->image }}" class="rounded" style="width: 100px;height:50px">
+                                                        @endforeach
+                                                    @endforeach
+                                                
                                             </div>
                                         </div>
                                     </div>

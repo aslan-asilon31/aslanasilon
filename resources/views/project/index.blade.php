@@ -20,6 +20,7 @@
           <th>Image</th>
           <th>Title</th>
           <th>Gallery</th>
+          <th>Technology</th>
           <th>Description</th>
           <th>Actions</th>
         </tr>
@@ -36,10 +37,18 @@
                 <td class="text-center">
                     @foreach ($project->projectgalleries as $ppg)
 
-                        @foreach ($ppg->gallery()->get() as $pg)
-                        {{ $pg->title }},
-                        @endforeach
+                    {{ $ppg->project_id }},
+                        {{-- @foreach ($ppg->gallery()->get() as $pg)
+                            {{ $pg->title }},
+                        @endforeach --}}
                         
+                    @endforeach
+                </td>
+                <td class="text-center">
+                    @foreach ($project->projectgalleries()->get() as $ppg)
+                        {{-- @foreach ($ppg->technology as $ppgt) --}}
+                        {{ $ppg->project_id }}
+                        {{-- @endforeach --}}
                     @endforeach
                 </td>
                 <td class="text-center">

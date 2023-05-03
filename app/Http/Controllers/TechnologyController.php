@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Technology;
 use App\Models\Project;
+use App\Models\Gallery;
+use App\Models\Url;
 use Storage;
 
 class TechnologyController extends Controller
@@ -12,14 +14,19 @@ class TechnologyController extends Controller
     public function index()
     {
         $projects = Project::all();
+        $galleries = Gallery::all();
         $technologies = Technology::all();
-        return view('technology.index', compact('technologies','projects'));
+        $urls = Url::all();
+        return view('technology.index', compact('projects','galleries','technologies','urls'));
     }
     
     public function create()
     {
         $projects = Project::all();
-        return view('technology.create', compact('projects'));
+        $galleries = Gallery::all();
+        $technologies = Technology::all();
+        $urls = Url::all();
+        return view('technology.create', compact('projects','galleries','technologies','urls'));
     }
 
 
@@ -57,11 +64,11 @@ class TechnologyController extends Controller
 
     public function update(Request $request, Technology $technology)
     {
-        $this->validate($request, [
-            'image'     => 'required|image|mimes:png,jpg,jpeg',
-            'title'     => 'required',
-            'description'   => 'required'
-        ]);
+        // $this->validate($request, [
+        //     'image'     => 'required|image|mimes:png,jpg,jpeg',
+        //     'title'     => 'required',
+        //     'description'   => 'required'
+        // ]);
 
         //get data Blog by ID
         $technology = Technology::findOrFail($technology->id);
