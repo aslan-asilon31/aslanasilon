@@ -34,9 +34,12 @@
                     {{ $project->title }}
                 </td>
                 <td class="text-center">
-                    @foreach ($project->galleries as $pg)
+                    @foreach ($project->projectgalleries as $ppg)
+
+                        @foreach ($ppg->gallery()->get() as $pg)
+                        {{ $pg->title }},
+                        @endforeach
                         
-                    {{ $pg->title }},
                     @endforeach
                 </td>
                 <td class="text-center">

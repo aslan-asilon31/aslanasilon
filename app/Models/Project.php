@@ -14,24 +14,9 @@ class Project extends Model
         'title',
         'description',
     ];
-
-    public function galleries()
+    
+    public function projectgalleries()
     {
-        return $this->belongsToMany(Gallery::class, 'project_galleries');
-    }
-
-    // public function galleries()
-    // {
-    //     return $this->hasMany(Gallery::class);
-    // }
-
-    // public function urls()
-    // {
-    //     return $this->hasMany(Url::class);
-    // }
-
-    public function technologies()
-    {
-        return $this->hasMany(Technology::class);
+        return $this->hasMany(ProjectGallery::class);
     }
 }

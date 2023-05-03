@@ -15,9 +15,9 @@ class Technology extends Model
         'description',
     ];
 
-    public function project()
+    public function projectgalleries()
     {
-        return $this->belongsTo(Project::class);
+        return $this->hasMany(ProjectGallery::class);
     }
 
     

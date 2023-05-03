@@ -15,4 +15,24 @@ class ProjectGallery extends Model
         'technology_id',
         'url_id',
     ];
+
+    public function gallery()
+    {
+        return $this->belongsTo(Gallery::class);
+    }
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
+
+    public function technology()
+    {
+        return $this->belongsTo(Technology::class);
+    }
+
+    public function url()
+    {
+        return $this->belongsTo(Url::class);
+    }
 }

@@ -21,13 +21,8 @@ class Gallery extends Model
         'description',
     ];
 
-    public function projects()
+    public function projectgalleries()
     {
-        return $this->belongsToMany(Project::class, 'project_galleries');
+        return $this->hasMany(ProjectGallery::class);
     }
-
-    // public function project()
-    // {
-    //     return $this->belongsTo(Project::class);
-    // }
 }

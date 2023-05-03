@@ -18,7 +18,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">Image</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
+                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="selectImage">
                         
                             <!-- error message untuk title -->
                             @error('image')
@@ -26,6 +26,11 @@
                                     {{ $message }}
                                 </div>
                             @enderror
+
+                        </div>
+                        
+                        <div class="form-group rounded mx-auto d-block img-fluid" >
+                            <img id="preview" src="#" alt="your image" style="width:500px; height:250px;" class="mt-3 " style="display:none;"/>
                         </div>
 
                         <div class="form-group">
@@ -88,6 +93,16 @@
 @stop
 
 @section('js')
+<script>
+    selectImage.onchange = evt => {
+        preview = document.getElementById('preview');
+        preview.style.display = 'block';
+        const [file] = selectImage.files
+        if (file) {
+            preview.src = URL.createObjectURL(file)
+        }
+    }
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>

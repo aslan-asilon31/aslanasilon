@@ -17,8 +17,6 @@
       <table id="example1" class="table table-bordered table-striped">
         <thead>
         <tr>
-          <th>Project ID</th>
-          <th>Project Name</th>
           <th>Image</th>
           <th>Title</th>
           <th>Description</th>
@@ -28,17 +26,6 @@
         <tbody>
             @foreach ($galleries as $gallery)
             <tr>
-                <td class="text-center">
-                    @foreach ($gallery->projects as $gp)
-                    {{ $gp->id }},
-                    @endforeach
-                </td>
-                <td class="text-center">
-                    @foreach ($gallery->projects as $gp)
-                    {{ $gp->title }}
-                        
-                    @endforeach
-                </td>
                 <td class="text-center">
                     <img src="{{ Storage::url('public/galleries/').$gallery->image }}" class="rounded" style="width: 150px">
                 </td>

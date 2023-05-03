@@ -19,6 +19,8 @@
         <tr>
           <th>Project ID</th>
           <th>Gallery ID</th>
+          <th>Technology ID</th>
+          <th>Url ID</th>
           <th>Actions</th>
         </tr>
         </thead>
@@ -30,6 +32,12 @@
                 </td>
                 <td class="text-center">
                     {{ $gallery->gallery_id }}
+                </td>
+                <td class="text-center">
+                    {{ $gallery->technology_id }}
+                </td>
+                <td class="text-center">
+                    {{ $gallery->url_id }}
                 </td>
                 <td class="text-center">
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('projectgalleries.destroy', $gallery->id) }}" method="POST">
