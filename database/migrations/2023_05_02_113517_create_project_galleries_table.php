@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('project_galleries', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id')->constrained('projects');
-            $table->foreignId('gallery_id')->constrained('galleries');
-            $table->foreignId('technology_id')->constrained('technologies');
-            $table->foreignId('url_id')->constrained('urls');
+            $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('gallery_id');
+            $table->unsignedBigInteger('technology_id');
+            $table->unsignedBigInteger('url_id');
             $table->timestamps();
+
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreign('gallery_id')->references('id')->on('galleries')->onDelete('cascade');
+            $table->foreign('technology_id')->references('id')->on('technologies')->onDelete('cascade');
+            $table->foreign('url_id')->references('id')->on('url_id')->onDelete('cascade');
         });
     }
 
