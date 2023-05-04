@@ -1,16 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'Technology')
+@section('title', 'About me')
 
 @section('content_header')
-    <h1>Technology</h1>
+    <h1>About Me</h1>
 @stop
 
 @section('content')
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Technology List</h3>
-      <a href="{{ route('technologies.create') }}" class="btn btn-md btn-success mb-3">Add Technology</a>
+      <h3 class="card-title">About Me List</h3>
+      <a href="{{ route('abouts.create') }}" class="btn btn-md btn-success mb-3">Add About</a>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -18,26 +18,38 @@
         <thead>
         <tr>
           <th>Image</th>
-          <th>Title</th>
-          <th>Description</th>
+          <th>Bio</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Address</th>
+          <th>Language</th>
           <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-            @foreach ($technologies as $technology)
+            @foreach ($abouts as $about)
             <tr>
                 <td class="text-center">
-                    <img src="{{ Storage::url('public/technologies/').$technology->image }}" class="rounded" style="width: 150px">
+                    <img src="{{ Storage::url('public/abouts/').$about->image }}" class="rounded" style="width: 150px">
                 </td>
                 <td class="text-center">
-                    {{ $technology->title }}
+                    {{ $about->bio }}
                 </td>
                 <td class="text-center">
-                    {{ $technology->description }}
+                    {{ $about->email }}
                 </td>
                 <td class="text-center">
-                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('technologies.destroy', $technology->id) }}" method="POST">
-                        <a href="{{ route('technologies.edit', $technology->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
+                    {{ $about->phone }}
+                </td>
+                <td class="text-center">
+                    {{ $about->address }}
+                </td>
+                <td class="text-center">
+                    -
+                </td>
+                <td class="text-center">
+                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('abouts.destroy', $about->id) }}" method="POST">
+                        <a href="{{ route('abouts.edit', $about->id) }}" class="btn btn-sm btn-primary"> <i class="fa fa-edit"></i> </a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>

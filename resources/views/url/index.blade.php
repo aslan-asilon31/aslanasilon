@@ -37,7 +37,7 @@
                 </td>
                 <td class="text-center">
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('urls.destroy', $url->id) }}" method="POST">
-                        <a href="{{ route('urls.edit', $url->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                        <a href="{{ route('urls.edit', $url->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>

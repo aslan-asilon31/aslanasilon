@@ -41,10 +41,10 @@
                 </td>
                 <td class="text-center">
                     <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('projectgalleries.destroy', $gallery->id) }}" method="POST">
-                        <a href="{{ route('projectgalleries.edit', $gallery->id) }}" class="btn btn-sm btn-primary">EDIT</a>
+                        <a href="{{ route('projectgalleries.edit', $gallery->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-sm btn-danger">HAPUS</button>
+                        <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
                     </form>
                 </td>
             </tr>

@@ -12,6 +12,15 @@ class TechnologySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Technology::create([
+            'image'	=> '',
+            'title'	=> 'Laravel 10',
+            'description'	=> '',
+        ]);
+        \App\Models\Technology::create([
+            'image'	=> '',
+            'title'	=> 'ReactJS',
+            'description'	=> '',
+        ]);
     }
 }

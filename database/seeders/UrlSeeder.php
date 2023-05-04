@@ -12,6 +12,22 @@ class UrlSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Url::create([
+            'image'	=> '',
+            'title'	=> 'Website',
+            'description'	=> '',
+        ]);
+
+        \App\Models\Url::create([
+            'image'	=> '',
+            'title'	=> 'Github',
+            'description'	=> '',
+        ]);
+
+        \App\Models\Url::create([
+            'image'	=> '',
+            'title'	=> 'Youtube',
+            'description'	=> '',
+        ]);
     }
 }

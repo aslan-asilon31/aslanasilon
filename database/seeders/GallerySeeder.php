@@ -12,6 +12,10 @@ class GallerySeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Gallery::create([
+            'image'	=> '',
+            'title'	=> 'Database Design',
+            'description'	=> '',
+        ]);
     }
 }

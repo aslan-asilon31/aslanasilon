@@ -1,0 +1,10 @@
+DROP table urls;
+DROP table technologies;
+DROP table social_media;
+DROP table skills;
+DROP table project_galleries;
+DROP table projects;
+DROP table portfolios;
+DROP table languages;
+DROP table experiences;
+DROP table abouts;

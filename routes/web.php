@@ -8,6 +8,10 @@ use App\Http\Controllers\ProjectGalleryController;
 use App\Http\Controllers\UrlController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\VisitorController;
+use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\SocialMediaController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -40,5 +44,9 @@ Route::resource('projects', ProjectController::class);
 Route::resource('technologies', TechnologyController::class);
 Route::resource('urls', UrlController::class);
 Route::resource('galleries', GalleryController::class);
+Route::resource('portfolios', PortfolioController::class);
+Route::resource('abouts', AboutController::class);
 Route::resource('projectgalleries', ProjectGalleryController::class);
+Route::resource('socialmedias', SocialMediaController::class);
+Route::resource('languages', LanguageController::class);
 Route::get('/', [VisitorController::class, 'index']);

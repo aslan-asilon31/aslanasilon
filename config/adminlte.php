@@ -318,6 +318,16 @@ return [
         ],
         ['header' => 'Projects'],
         [
+            'text' => 'About me',
+            'url'  => 'abouts',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Portfolio',
+            'url'  => 'portfolios',
+            'icon' => 'fas fa-fw fa-file',
+        ],
+        [
             'text' => 'Project Gallery',
             'url'  => 'projectgalleries',
             'icon' => 'fas fa-fw fa-images',

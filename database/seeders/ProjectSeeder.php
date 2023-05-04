@@ -12,6 +12,17 @@ class ProjectSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        \App\Models\Project::create([
+            'image'	=> '',
+            'title'	=> 'Aurofil Laravel 10 Bootstrap',
+            'type'	=> 'web',
+            'description'	=> '',
+        ]);
+        \App\Models\Project::create([
+            'image'	=> '',
+            'title'	=> 'Aurofil Laravel 10 ReactJS',
+            'type'	=> 'web',
+            'description'	=> '',
+        ]);
     }
 }

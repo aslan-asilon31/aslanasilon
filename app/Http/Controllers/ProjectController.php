@@ -19,6 +19,14 @@ class ProjectController extends Controller
         return view('project.index', compact('projects','technologies'));
     }
 
+    public function show(Project $project)
+    {
+        // $galleries = Gallery::all();
+        // $technologies = Technology::all();
+        // $urls = Url::all();
+        return view('project.detail', compact('project'));
+    }
+
     public function create()
     {
         $galleries = Gallery::all();
