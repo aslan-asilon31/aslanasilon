@@ -18,6 +18,7 @@ class About extends Model
     protected $fillable = [
         'image',
         'bio',
+        'email',
         'phone',
         'address',
         'language',
