@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Url Edit')
+@section('title', 'Skill Edit')
 
 @section('content_header')
-    <h1>Url Edit</h1>
+    <h1>Skill Edit</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card border-0 shadow rounded">
                 <div class="card-body">
-                    <form action="{{ route('urls.update', $url->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('skills.update', $skill->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -23,7 +23,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">Title</label>
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $url->title) }}" placeholder="Insert title">
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $skill->title) }}" placeholder="Insert title">
                         
                             <!-- error message untuk title -->
                             @error('title')
@@ -35,7 +35,7 @@
 
                         <div class="form-group">
                             <label class="font-weight-bold">Description</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description', $url->description) }}</textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description', $skill->description) }}</textarea>
                         
                             <!-- error message untuk content -->
                             @error('description')

@@ -66,7 +66,7 @@
                             <div class="container">
                                 <div class="button-container">
                                     @foreach ($socialmedias as $socialmedia)
-                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('images/svg/github.png');" href="{{ $socialmedia->url }}" rel="tooltip" title="Follow me on {{ $socialmedia->title }}"><i class="fa fa-facebook"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ Storage::url('public/socialmedias/').$socialmedia->image }}');" href="{{ $socialmedia->url }}" rel="tooltip" title="Follow me on {{ $socialmedia->title }}"><i class="fa fa-facebook"></i></a>
                                     @endforeach
                                 </div>
                             </div>
@@ -114,7 +114,8 @@
                                                 </figure>
                                             </a>
                                             <div class="">
-                                                <h6>Project Start : <span class="badge text-bg-info">Info</span>  </h6>
+                                                <h6>Project Start : <span class="text-white" style="background-color: blueviolet">{{ Carbon\Carbon::parse($project->created_at)->translatedFormat('l, d F Y'); }}</span>  </h6>
+                                                
                                                     <hr>
                                                 <h6>Technology : </h6>
                                                     @foreach ($project->projectgalleries()->get() as $ppg)
@@ -128,7 +129,9 @@
                                                 <h6>Link DEMO: </h6>
                                                     @foreach ($project->projectgalleries()->get() as $ppg)
                                                         @foreach ($ppg->url()->get() as $ppgu)
-                                                            <img src="{{ Storage::url('public/urls/').$ppgu->image }}" class="rounded" style="width: 100px;height:50px">
+                                                            <a href="{{ $ppgu->description }}">
+                                                                <img src="{{ Storage::url('public/urls/').$ppgu->image }}" class="rounded" style="width: 100px;height:50px">
+                                                            </a>
                                                         @endforeach
                                                     @endforeach
                                                 
@@ -346,6 +349,7 @@
                                 <div class="card-body cc-experience-header">
                                     <p>{{ $experience->work_start }} - {{ $experience->work_end }}</p>
                                     <div class="h5">{{ $experience->status }}</div>
+                                    <img src="{{ Storage::url('public/experiences/').$experience->image }}" alt="" style="width:300px; height:150">
                                 </div>
                             </div>
                             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">

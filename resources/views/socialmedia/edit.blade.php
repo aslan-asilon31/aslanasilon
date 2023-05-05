@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Url Add')
+@section('title', 'Social Media Edit')
 
 @section('content_header')
-    <h1>Url Add</h1>
+    <h1>Social Media Edit</h1>
 @stop
 
 @section('content')
@@ -12,39 +12,18 @@
         <div class="col-md-12">
             <div class="card border-0 shadow rounded">
                 <div class="card-body">
-                    <form action="{{ route('urls.store') }}" method="POST" enctype="multipart/form-data">
-                    
+                    <form action="{{ route('socialmedias.update', $socialmedia->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
+                        @method('PUT')
 
                         <div class="form-group">
                             <label class="font-weight-bold">Image</label>
-                            <input type="file" class="form-control @error('image') is-invalid @enderror" name="image" id="selectImage">
-                        
-                            <!-- error message untuk title -->
-                            @error('image')
-                                <div class="alert alert-danger mt-2">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group rounded mx-auto d-block img-fluid" >
-                            <img id="preview" src="#" alt="your image" style="width:500px; height:250px;" class="mt-3 " style="display:none;"/>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="exampleSelectRounded0">Project ID</label>
-                            <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                              <option style="display:none;">Select Project</option>
-                              @foreach ($projects as $p)
-                              <option name="project_id" value="{{ $p->id }}">{{ $p->title }}</option>
-                              @endforeach
-                            </select>
+                            <input type="file" class="form-control" name="image">
                         </div>
 
                         <div class="form-group">
                             <label class="font-weight-bold">Title</label>
-                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" placeholder="Insert title">
+                            <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title', $socialmedia->title) }}" placeholder="Insert title">
                         
                             <!-- error message untuk title -->
                             @error('title')
@@ -55,8 +34,20 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="font-weight-bold">Url</label>
+                            <input type="text" class="form-control @error('url') is-invalid @enderror" name="url" value="{{ old('url', $socialmedia->url) }}" placeholder="Insert url">
+                        
+                            <!-- error message untuk title -->
+                            @error('url')
+                                <div class="alert alert-danger mt-2">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <label class="font-weight-bold">Description</label>
-                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description') }}</textarea>
+                            <textarea class="form-control @error('description') is-invalid @enderror" name="description" rows="5" placeholder="Insert description">{{ old('description', $socialmedia->description) }}</textarea>
                         
                             <!-- error message untuk content -->
                             @error('description')
@@ -66,7 +57,7 @@
                             @enderror
                         </div>
 
-                        <button type="submit" class="btn btn-md btn-primary">SIMPAN</button>
+                        <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
                         <button type="reset" class="btn btn-md btn-warning">RESET</button>
 
                     </form> 
@@ -86,15 +77,5 @@
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
     CKEDITOR.replace( '' );
-</script>
-<script>
-    selectImage.onchange = evt => {
-        preview = document.getElementById('preview');
-        preview.style.display = 'block';
-        const [file] = selectImage.files
-        if (file) {
-            preview.src = URL.createObjectURL(file)
-        }
-    }
 </script>
 @stop

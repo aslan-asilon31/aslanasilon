@@ -352,6 +352,26 @@ return [
             'url'  => 'urls',
             'icon' => 'fas fa-fw fa-link',
         ],
+        [
+            'text' => 'Language',
+            'url'  => 'languages',
+            'icon' => 'fas fa-fw fa-link',
+        ],
+        [
+            'text' => 'Social Media',
+            'url'  => 'socialmedias',
+            'icon' => 'fas fa-fw fa-link',
+        ],
+        [
+            'text' => 'Skill',
+            'url'  => 'skills',
+            'icon' => 'fas fa-fw fa-link',
+        ],
+        [
+            'text' => 'Experience',
+            'url'  => 'experiences',
+            'icon' => 'fas fa-fw fa-link',
+        ],
         ['header' => 'Settings'],
         [
             'text' => 'log-out',

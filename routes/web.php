@@ -12,6 +12,8 @@ use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\SocialMediaController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -49,4 +51,6 @@ Route::resource('abouts', AboutController::class);
 Route::resource('projectgalleries', ProjectGalleryController::class);
 Route::resource('socialmedias', SocialMediaController::class);
 Route::resource('languages', LanguageController::class);
+Route::resource('skills', SkillController::class);
+Route::resource('experiences', ExperienceController::class);
 Route::get('/', [VisitorController::class, 'index']);

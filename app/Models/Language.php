@@ -9,7 +9,7 @@ class Language extends Model
 {
     use HasFactory;
 
-    protected $table = 'languaes';
+    protected $table = 'languages';
 
     protected $keyType = 'string';
 

@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Url Add')
+@section('title', 'Skill Add')
 
 @section('content_header')
-    <h1>Url Add</h1>
+    <h1>Skill Add</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card border-0 shadow rounded">
                 <div class="card-body">
-                    <form action="{{ route('urls.store') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('skills.store') }}" method="POST" enctype="multipart/form-data">
                     
                         @csrf
 
@@ -30,16 +30,6 @@
 
                         <div class="form-group rounded mx-auto d-block img-fluid" >
                             <img id="preview" src="#" alt="your image" style="width:500px; height:250px;" class="mt-3 " style="display:none;"/>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="exampleSelectRounded0">Project ID</label>
-                            <select class="custom-select rounded-0" id="exampleSelectRounded0">
-                              <option style="display:none;">Select Project</option>
-                              @foreach ($projects as $p)
-                              <option name="project_id" value="{{ $p->id }}">{{ $p->title }}</option>
-                              @endforeach
-                            </select>
                         </div>
 
                         <div class="form-group">
@@ -85,7 +75,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace( '' );
+    CKEDITOR.replace( 'description' );
 </script>
 <script>
     selectImage.onchange = evt => {
