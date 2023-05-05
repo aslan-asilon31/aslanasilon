@@ -1,6 +1,17 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/example/public_html/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp style.css $DEPLOYPATH
+    - export DEPLOYPATH=/home/username/app/
+    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R bootstrap  $DEPLOYPATH
+    - /bin/cp -R config  $DEPLOYPATH
+    - /bin/cp -R database  $DEPLOYPATH
+    - /bin/cp -R public  $DEPLOYPATH
+    - /bin/cp -R resources  $DEPLOYPATH
+    - /bin/cp -R routes  $DEPLOYPATH
+    - /bin/cp -R storage $DEPLOYPATH
+    - /bin/cp -R tests $DEPLOYPATH
+    # - /bin/cp /home/vlexvzko/app/package.json
+    # - /bin/cp /home/vlexvzko/app/composer.json
+    # - /bin/cp /home/vlexvzko/app/composer.lock
+    # - /bin/cp /home/vlexvzko/app/webpack.mix.js
