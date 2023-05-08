@@ -8,3 +8,15 @@ DROP table portfolios;
 DROP table languages;
 DROP table experiences;
 DROP table abouts;
+
+
+
+=====================
+<?php header('Location: public/');
+
+===================
+
+
+
+===if storae link error
+https://stackoverflow.com/questions/70381201/call-to-undefined-function-illuminate-filesystem-symlink

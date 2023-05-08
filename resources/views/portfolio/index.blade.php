@@ -10,7 +10,7 @@
 <div class="card">
     <div class="card-header">
       <h3 class="card-title">Portfolio List</h3>
-      {{-- <a href="{{ route('portfolio.create') }}" class="btn btn-md btn-success mb-3">Add Gallery</a> --}}
+      <a href="{{ route('portfolios.create') }}" class="btn btn-md btn-success mb-3">Add Portfolio</a>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -19,7 +19,7 @@
         <tr>
           <th>Image</th>
           <th>Title</th>
-          <th>Url</th>
+          <th>Icon</th>
           <th>Description</th>
           <th>Actions</th>
         </tr>
@@ -40,12 +40,12 @@
                     {{ $portfolio->description }}
                 </td>
                 <td class="text-center">
-                    {{-- <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('portfolios.destroy', $portfolio->id) }}" method="POST">
+                    <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('portfolios.destroy', $portfolio->id) }}" method="POST">
                         <a href="{{ route('portfolios.edit', $portfolio->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
-                    </form> --}}
+                    </form>
                 </td>
             </tr>
             @endforeach
