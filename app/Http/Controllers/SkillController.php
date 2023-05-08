@@ -20,7 +20,6 @@ class SkillController extends Controller
         return view('skill.create', compact('projects'));
     }
 
-
     public function store(Request $request)
     {
         $this->validate($request, [

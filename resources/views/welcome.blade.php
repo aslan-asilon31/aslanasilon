@@ -114,8 +114,8 @@
                                                 </figure>
                                             </a>
                                             <div class="">
-                                                <h6>Project Start : <span class="text-white" style="background-color: blueviolet">{{ Carbon\Carbon::parse($project->created_at)->translatedFormat('l, d F Y'); }}</span>  </h6>
-                                                
+                                                <h6>Project Start : <span class="text-white" style="background-color: blueviolet">{{ Carbon\Carbon::parse($project->created_at)->translatedFormat('l, d F Y'); }} </span>   </h6>
+                                                <h6>Last Update : <span>{{ Carbon\Carbon::parse($project->updated_at)->diffForHumans(); }}</span></h6>
                                                     <hr>
                                                 <h6>Technology : </h6>
                                                     @foreach ($project->projectgalleries()->get() as $ppg)
@@ -328,7 +328,11 @@
                                         <div class="col-sm-4"><strong class="text-uppercase">Language:</strong></div>
                                         <div class="col-sm-8">
                                             <p>
-                                                <a href="" style="content: url('images/united-states.png');width: 30px; height: 30px;"></a>{{ $about->language }}</p>
+                                                @foreach ($languages as $language)
+                                                <a href="" style="content: url('{{ Storage::url('public/languages/').$language->image }}');width: 30px; height: 30px;"></a>
+                                                <span>{{ $language->description }}</span>
+                                            </p>
+                                                @endforeach
 
                                         </div>
                                     </div>
