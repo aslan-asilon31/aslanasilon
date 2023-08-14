@@ -13,15 +13,15 @@ return new class extends Migration
     {
         Schema::create('project_galleries', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('project_id');
-            $table->unsignedBigInteger('gallery_id');
-            $table->unsignedBigInteger('technology_id');
-            $table->unsignedBigInteger('url_id');
-            $table->unsignedBigInteger('about_id');
-            $table->unsignedBigInteger('portfolio_id');
-            $table->unsignedBigInteger('experience_id');
-            $table->unsignedBigInteger('language_id');
-            $table->unsignedBigInteger('social_media_id');
+            $table->unsignedBigInteger('project_id')->nullable();
+            $table->unsignedBigInteger('gallery_id')->nullable();
+            $table->unsignedBigInteger('technology_id')->nullable();
+            $table->unsignedBigInteger('url_id')->nullable();
+            $table->unsignedBigInteger('about_id')->nullable();
+            $table->unsignedBigInteger('portfolio_id')->nullable();
+            $table->unsignedBigInteger('experience_id')->nullable();
+            $table->unsignedBigInteger('language_id')->nullable();
+            $table->unsignedBigInteger('social_media_id')->nullable();
             $table->timestamps();
 
             
