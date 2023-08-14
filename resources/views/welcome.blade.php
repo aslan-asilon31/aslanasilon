@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aslan Resume</title>
+    <title>Aslan Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ asset('frontend/css/aos.css?ver=1.1.0') }}" rel="stylesheet">
@@ -54,7 +54,7 @@
                                     <a href="#"><img src="{{ Storage::url('public/abouts/').$about->image }}" alt="Image" /></a>
                                 </div>
                                 @endforeach
-                                <div class="h2 title">👨‍🚀 Sulaslan Setiawan 🧑🏻‍🚀 </div>
+                                <div class="h2 title" id="typing-text">👨‍🚀 Sulaslan Setiawan 🧑🏻‍🚀 </div>
                                 <p class="category text-white">Software Engineer</p>
                                 <a class="btn btn-primary" onclick="alert('Private !');" style="width:200px;" data-aos="zoom-in" data-aos-anchor="data-aos-anchor"> <b>Download CV 📁</b>  </a>
                                 <!-- <p class="category text-white">Junior Web Developer</p><a class="btn btn-primary" style="width:200px;" href="https://docs.google.com/document/d/1yF5MGBLtBjHCJYCdDxM0_pzpQMgSubLL0ocEZRGzIJI/edit#heading=h.6wymnhinx9q5"  data-aos="zoom-in" data-aos-anchor="data-aos-anchor" disabled> <b>See / Download My CV</b> </a> -->
@@ -359,6 +359,7 @@
                             <div class="col-md-9" data-aos="fade-left" data-aos-offset="50" data-aos-duration="500">
                                 <div class="card-body">
                                     <div class="h5">{{ $experience->company_name }}</div>
+                                    {{ $experience->company_about }}
                                     <p>{{ $experience->work_position }}</p>
                                 </div>
                             </div>
@@ -389,6 +390,7 @@
             document.getElementById("demo").innerHTML = "Hello World";
         }
     </script>
+    
 
 </body>
 
