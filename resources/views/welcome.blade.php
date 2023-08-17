@@ -65,9 +65,12 @@
                         <div class="section">
                             <div class="container">
                                 <div class="button-container">
-                                    @foreach ($socialmedias as $socialmedia)
-                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ Storage::url('public/socialmedias/').$socialmedia->image }}');" href="{{ $socialmedia->url }}" rel="tooltip" title="Follow me on {{ $socialmedia->title }}"><i class="fa fa-facebook"></i></a>
-                                    @endforeach
+                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ asset('frontend/socialmedia/linkedin_logo.png')}}" href="" rel="tooltip" title="Follow me on Linkedin"><i class="fa fa-linkedin"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ asset('frontend/socialmedia/github_logo.png')}}" href="" rel="tooltip" title="Follow me on Github"><i class="fa fa-github"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ asset('frontend/socialmedia/instagram_logo.png')}}" href="" rel="tooltip" title="Follow me on Instagram"><i class="fa fa-instagram"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ asset('frontend/socialmedia/jobstreet_logo.png')}}" href="" rel="tooltip" title="Follow me on Jobstreet"><i class="fa fa-jobstreet"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ asset('frontend/socialmedia/whatsapp_logo.png')}}" href="" rel="tooltip" title="Follow me on Whatsapp"><i class="fa fa-jobstreet"></i></a>
+                                    <a class="btn btn-default btn-round btn-lg btn-icon " style="content: url('{{ asset('frontend/socialmedia/youtube_logo.png')}}" href="" rel="tooltip" title="Follow me on Youtube"><i class="fa fa-jobstreet"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -85,8 +88,13 @@
                             <div class="nav-align-center">
 
                                 <ul class="nav nav-pills nav-pills-primary" role="tablist">
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#graphic-design" role="tablist"><i class="fa fa-desktop" aria-hidden="true"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#android" role="tablist"><i class="fa fa-android" aria-hidden="true"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#web-development" role="tablist"><i class="fa fa-laptop" aria-hidden="true"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#adobe" role="tablist"><i class="fa fa-picture-o" aria-hidden="true"></i></a></li>
+                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#languages" role="tablist"><i class="fa fa-language" aria-hidden="true"></i></a></li>
                                     @foreach ($portfolios as $portfolio)
-                                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#{{ $portfolio->title }}" role="tablist"><i class="fa fa-{{ $portfolio->icon }}" aria-hidden="true"></i></a></li>
+                                    {{-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#{{ $portfolio->title }}" role="tablist"><i class="fa fa-{{ $portfolio->icon }}" aria-hidden="true"></i></a></li> --}}
                                     @endforeach
                                 </ul>
 

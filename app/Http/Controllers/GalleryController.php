@@ -12,8 +12,9 @@ class GalleryController extends Controller
 {
     public function index()
     {
-        $projects = Project::all();
-        $galleries = Gallery::all();
+        $projects = DB::select("SELECT * FROM projects ORDER BY created_at DESC");
+        $galleries = DB::select("SELECT * FROM galleries ORDER BY created_at DESC");
+
         return view('gallery.index', compact('galleries','projects'));
     }
     

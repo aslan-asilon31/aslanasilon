@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Experience;
 use Storage;
+use DB;
 
 class ExperienceController extends Controller
 {
     public function index()
     {
-        $experiences= Experience::all();
+        $experiences = DB::select("SELECT * FROM experiences ORDER BY created_at DESC");
         return view('experience.index', compact('experiences'));
     }
 

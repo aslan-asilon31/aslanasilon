@@ -8,13 +8,14 @@ use App\Models\Project;
 use App\Models\ProjectGallery;
 use App\Models\About;
 use Storage;
+use DB;
 
 class AboutController extends Controller
 {
     public function index()
     {
-        $abouts = About::all();
-        return view('about.index',compact('abouts'));
+        $abouts = DB::select("SELECT * FROM abouts ORDER BY created_at DESC");
+        return view('about.index', compact('abouts'));
     }
 
     public function show(About $about)
